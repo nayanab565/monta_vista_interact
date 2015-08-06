@@ -1,0 +1,24 @@
+<div class="center">
+  <h1>Edit Profile</h1>
+
+  <form action="/users/<%= @user.id %>/update">
+    <div>
+      <label for="name">Full Name</label><br />
+      <input id="name" name="name" value="<%= @user.name  %>" type="text" />
+    </div>
+    <div>
+      <label for="email">Email Address</label><br />
+      <input id="email" name="email" value="<%= @user.email  %>" type="text" />
+    </div>
+    <div>
+      <label for="grade">Grade Level</label><br />
+      <input id="grade" name="grade" value="<%= @user.grade  %>" type="text" />
+    </div>
+    <br>
+    <div>
+      <input type="submit">
+    </div>
+  </form>
+</div>
+
+

@@ -1,0 +1,61 @@
+<div class="container">
+  <h1>Welcome, <%= @user.name %>.</h1>
+
+  <div>
+    <strong>Name</strong>:<br />
+    <p><%= @user.name %></p>
+  </div>
+  <div>
+    <strong>Email</strong>:<br />
+    <p><%= @user.email %></p>
+  </div>
+  <div>
+    <strong>Grade</strong>:<br />
+    <p><%= @user.grade %></p>
+  </div>
+  <div>
+    <strong>Student I.D.</strong>:<br />
+    <p><%= @user.student_id %></p>
+  </div>
+  <div>
+    <strong>Hours</strong>:<br />
+    <p><%= @user.hours %></p>
+  </div>
+  <div>
+    <strong>Upcoming Events</strong>:<br />
+    <%if @user.id != 1%>
+    <ul>
+      <% end %>
+      <% @user.signups.each do |signup| %>
+      <% if signup.is_complete == false%>
+      <form action="/signups/<%=signup.id%>/update">
+        <%@user = User.find_by(id: session['uid'])%>
+        <%if @user.id == 1%>
+        <input class="done" type="checkbox" name="is_complete"><%= Event.find_by_id(signup.event_id).name%><br>
+        <input type="submit" value="Done">
+        <%else%>
+        <li><%= Event.find_by_id(signup.event_id).name%></li>
+        <% end %>
+      </form>
+      <% end %>
+      <% end %>
+      <%if @user.id != 1%>
+    </ul>
+    <% end %>
+  </div>
+  <div>
+    <strong>Completed Events</strong>:<br />
+    <ul>
+      <% @user.signups.each do |signup| %>
+      <% if signup.is_complete %>
+      <li><%=signup.event.name%></li>
+      <% end %>
+      <% end %>
+    </ul>
+  </div>
+
+
+
+  <a href="/users/<%= @user.id %>/edit">Edit</a> <%if @user.id == 1%>|
+  <a href="/users/<%= @user.id %>/destroy">Destroy</a><% end %>
+</div>

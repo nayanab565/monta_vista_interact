@@ -1,0 +1,18 @@
+<div class="container">
+  <h1>Signup #<%= @signup.id %></h1>
+
+  <div>
+    <strong>User</strong>:<br />
+    <p><%= @signup.user.name %></p>
+  </div>
+  <div>
+    <strong>Event</strong>:<br />
+    <p><%= @signup.event.name %></p>
+  </div>
+  <div>
+    <strong>Complete?</strong>:<br />
+    <p><%= @signup.is_complete %></p>
+  </div>
+
+  <a href="/signups/<%= @signup.id %>/edit">Edit</a>
+</div>

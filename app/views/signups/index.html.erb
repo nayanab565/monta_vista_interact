@@ -1,0 +1,31 @@
+<div class="container">
+  <h1>Signups</h1>
+
+  <p><a href="/new_signup">Add a New Signup</a></p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>User</th>
+        <th>Event</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @signups.each do |signup| %>
+      <tr>
+        <td><%= signup.user.name%></td>
+        <td><%= signup.event.name %></td>
+        <td><a href="/signups/<%= signup.id %>">Show</a>
+        </td>
+        <td><a href="/signups/<%= signup.id %>/edit">Edit</a></td>
+        <td><a href="/signups/<%= signup.id %>/destroy">Destroy</a></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+

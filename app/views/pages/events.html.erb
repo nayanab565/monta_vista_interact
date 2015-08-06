@@ -1,0 +1,31 @@
+<div class="container">
+  <h1>Events</h1>
+  <% @events.each do |event| %>
+  <hr>
+  <h2><%=event.name%></h2>
+  <p>Location: <%=event.location%></p>
+  <p>Date: <%=event.date%></p>
+  <p>Hours: <%=event.hours%></p>
+  <p>Sign-ups: <%=event.sign_ups%></p>
+  <p>Maximum: <%=event.maximum%></p>
+  <p>Time: <%=event.time%></p>
+  <% s= Signup.where(user_id:session['uid']) %>
+  <% b= s.find_by(event_id: event.id) %>
+  <% if session['uid'].blank? %>
+  <form action="/sessions/new">
+    <input type="submit" value="Sign Up">
+  </form>
+  <% elsif b.blank? %>
+  <form action="/events/<%=event.id%>/create_signup">
+    <input type="submit" value="Sign Up">
+  </form>
+  <% elsif b.is_complete%>
+  <p>Good job! You've already completed this event!</p>
+  <% else %>
+  <p>You're signed up.</p>
+  <form action="/events/<%=event.id%>/cancel_signup">
+    <input type="submit" value="Cancel">
+  </form>
+  <% end %>
+  <% end %>
+</div>

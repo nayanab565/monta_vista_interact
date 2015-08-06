@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <title>FinalProject</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <div class="navbar-brand">
+            <div class="links-bar">
+              <a class="m" href="/home">Home</a>&nbsp;
+              <a class="m" href="/about">About Us</a>&nbsp;
+              <a class="m" href="/officers">Officers</a>&nbsp;
+              <a class="m" href="/international_project_committee">International Project Committee</a>&nbsp;
+              <a class="m" href="/community_project_committee">Community Project Committee</a>&nbsp;
+              <a class="m" href="/events">Events</a>&nbsp;
+              <a class="m" href="/contact_us">Contact Us</a>&nbsp;
+            </div>
+            <img class="logo" src="http://i.imgur.com/Rj6ZwoR.png?1" title="source: imgur.com" />
+            <% if session['student_id'] %>
+            <% u = User.find_by(student_id: session['student_id']) %>
+            <div id="sign_in_msg" class="container">
+              <div class="inline">You're signed in, </div>
+              <a class="inline" href="/users/<%=u.id%>"><%=u.name%></a>
+            </div>
+            <% end %>
+            <div id="links" class="container">
+              <% if session['student_id'] %>
+              <a class="log_in_n_out" href = "/sessions/destroy">Log Out</a>
+              <% else %>
+              <a class="sign-up" href="/new_user">Sign Up</a>
+              <span class="bar"> | </span>
+              <a class="log_in_n_out" href="/sessions/new">Log In</a>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div id="background-shade" class="jumbotron">
+    <%= yield %>
+    </div>
+
+  </body>
+</html>

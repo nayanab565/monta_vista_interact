@@ -1,0 +1,37 @@
+<div class="container">
+  <h1>Users</h1>
+
+  <p><a href="/new_user">Add a New User</a></p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Grade</th>
+        <th>Student</th>
+        <th>Password digest</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.email %></td>
+        <td><%= user.grade %></td>
+        <td><%= user.student_id %></td>
+        <td><%= user.password_digest %></td>
+        <td><a href="/users/<%= user.id %>">Show</a>
+        </td>
+        <td><a href="/users/<%= user.id %>/edit">Edit</a></td>
+        <td><a href="/users/<%= user.id %>/destroy">Destroy</a></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+

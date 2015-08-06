@@ -1,0 +1,23 @@
+<div class="container">
+  <h1>Editing Signup #<%= @signup.id %></h1>
+
+  <form action="/signups/<%= @signup.id %>/update">
+    <div>
+      <label for="user_id">user_id</label><br />
+      <input id="user_id" name="user_id" value="<%= @signup.user_id  %>" type="text" />
+    </div>
+    <div>
+      <label for="event_id">event_id</label><br />
+      <input id="event_id" name="event_id" value="<%= @signup.event_id  %>" type="text" />
+    </div>
+    <div>
+      <label for="is_complete">is_complete</label><br />
+      <input id="is_complete" name="is_complete" value="<%= @signup.is_complete  %>" type="text" />
+    </div>
+    <div>
+      <input type="submit">
+    </div>
+  </form>
+</div>
+
+

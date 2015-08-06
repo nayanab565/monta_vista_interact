@@ -1,0 +1,192 @@
+@font-face 
+{
+    font-family:'caviar_dreamsregular';
+    src: url('CaviarDreams-webfont.eot');
+    src: url('CaviarDreams-webfont.eot?#iefix') format('embedded-opentype'),
+         url('CaviarDreams-webfont.woff') format('woff'),
+         url('CaviarDreams-webfont.ttf') format('truetype'),
+         url('CaviarDreams-webfont.svg#caviar_dreamsregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face 
+{
+    font-family: 'caviar_dreamsbold';
+    src: url('Caviar_Dreams_Bold-webfont.eot');
+    src: url('Caviar_Dreams_Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('Caviar_Dreams_Bold-webfont.woff') format('woff'),
+         url('Caviar_Dreams_Bold-webfont.ttf') format('truetype'),
+         url('Caviar_Dreams_Bold-webfont.svg#caviar_dreamsbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+#background-shade
+{
+  background:rgba(0,0,0,0.2);
+  
+}
+#sign_in_msg
+{
+  position: absolute;
+  top: 10%;
+  left: 8%;
+  text-align: right;
+  color:#FFFFFF;
+}
+#links
+{
+  position: absolute;
+  top: 10%;
+  left: 90%;
+}
+#block_center
+{
+  margin-left: auto;
+  margin-right: auto;
+  width: 6em;
+}
+.background
+{
+  
+}
+.m
+{
+  font-size:20px;
+  color:#FFFFFF;
+}
+.links-bar
+{
+  position:absolute;
+  top:60%;
+  left:6%;
+}
+.log_in_n_out
+{
+  color: #FFFFFF;
+  position: absolute;
+  left: 3%;
+}
+.sign-up
+{
+  color: #FFFFFF;
+  position: absolute;
+  left: -4%;
+}
+.bar
+{
+  color:#FFFFFF;
+  position: absolute;
+  left: 3.8%;
+}
+.logo
+{
+  margin-top:-13px;
+  width:480px;
+  height:116px;
+}
+.navbar-header
+{
+  height:120px;
+}
+.header
+{
+  font-family: Merlin;
+}
+.navbar.navbar-default
+{
+  border:none;
+  background:transparent;
+  margin-bottom: 0px;
+  width: 100%;
+}
+.text_center
+{
+  text-align:center;
+}
+.jumbotron
+{
+  background:transparent;
+}
+.jumbotron-text, h1.jumbotron-text
+{
+  color:#FFFFFF;
+}
+.inline
+{
+  color:#FFFFFF;
+  margin-left:0px;
+  display:inline;
+}
+nav 
+{
+  display: block;
+  text-align: right;
+}
+h1,h2,h3,h4,h5,h6
+{
+  font-family:'caviar_dreamsbold', Arial, sans-serif;
+  font-size:150%;
+  color: #FFFFFF;
+  text-rendering: optimizeLegibility;
+}
+button
+{
+  color:#000000;
+}
+body
+{
+  position:relative;
+  margin:0;
+  margin:auto;
+  font-family:'caviar_dreamsregular', Arial, sans-serif;
+  font-size:150%;
+  text-rendering: optimizeLegibility;
+  background-image: url('http://asumag.com/site-files/asumag.com/files/imagecache/large_img/uploads/2014/06/img4550brighter.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity:1.0;
+  overflow-x:hidden;
+  overflow-y:auto;
+  max-width: 1366px;
+  color:#FFFFFF;
+}
+
+input
+{
+  color:#000000;
+}
+/*
+css below is from http://cozar.me/ (cozar14.css-2014)
+*/
+a
+{
+  color: #FFFFFF;
+}
+a:hover, a:focus
+{
+  color: #FFFFFF;
+  border-bottom: 2px solid #CBE86B;
+  text-decoration: none!important;
+  border-bottom-color: #CBE86B;
+}
+nav a,
+#submit.active
+{
+  color: #000;
+  font-size: 16px;
+  display: inline-block;
+  margin-left: 25px;
+}
+nav a:hover,
+#submit.active:hover,
+.list-pro a:hover,
+nav a.active,
+.list-pro a.active,
+.stButton .chicklets:hover,
+a.active
+{
+  color: #FFFFFF;
+  border-bottom: 3px solid #CBE86B;
+  text-decoration: none;
+  opacity:1!important;
+}
