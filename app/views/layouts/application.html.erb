@@ -28,7 +28,7 @@
             <% u = User.find_by(student_id: session['student_id']) %>
             <div id="sign_in_msg" class="container">
               <div class="inline">You're signed in, </div>
-              <a class="inline" href="/users/<%=u.id%>"><%=u.name%></a>
+              <a class="inline" href="/users/<%=u.id%>"><%=u.name%></a><span> |</span>
             </div>
             <% end %>
             <div id="links" class="container">

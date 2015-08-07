@@ -26,6 +26,9 @@ class SignupsController < ApplicationController
     @signup.is_complete = false
 
     if @signup.save
+      @event = Event.find_by_id(params['id'])
+      @event.sign_ups += 1
+      @event.save
       redirect_to "/events"
     else
       render "/users/#{session['uid']}"
@@ -73,6 +76,9 @@ end
 def cancel_signup
   @signup = Signup.where(event_id: params[:id])
   @todestroy = @signup.find_by(user_id: session['uid'])
+  @event = Event.find_by(params[:id])
+  @event.sign_ups -= 1
+  @event.save
   @todestroy.destroy
 
   redirect_to "/events"

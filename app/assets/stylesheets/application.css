@@ -22,8 +22,13 @@
 }
 #background-shade
 {
-  background:rgba(0,0,0,0.2);
-  
+  background:rgba(0,0,0,0.25);
+  padding-bottom:5px;
+}
+#log-in
+{
+  position:relative;
+  top:-20px;
 }
 #sign_in_msg
 {
@@ -60,11 +65,15 @@
   top:60%;
   left:6%;
 }
+input
+{
+  font-size:40px;
+}
 .log_in_n_out
 {
   color: #FFFFFF;
   position: absolute;
-  left: 3%;
+  left: 2.5%;
 }
 .sign-up
 {
@@ -111,21 +120,53 @@
 {
   color:#FFFFFF;
 }
+div .jumbotron
+{
+  margin-bottom:0;
+  padding:0;
+}
+div .container
+{
+  position:relative;
+  top:-30px;
+}
 .inline
 {
   color:#FFFFFF;
   margin-left:0px;
   display:inline;
 }
+.jumbotron .submit
+{
+  font-size:18px;
+  width:100px;
+  height:35px;
+}
 nav 
 {
   display: block;
   text-align: right;
 }
+.jumbotron h1
+{
+  font-size:36px;
+}
+.jumbotron h2
+{
+  font-size:28px;
+}
+.jumbotron label, input, div
+{
+  font-size:16px;
+}
+#event_list
+{
+  font-size:20px;
+  display:inline;
+}
 h1,h2,h3,h4,h5,h6
 {
   font-family:'caviar_dreamsbold', Arial, sans-serif;
-  font-size:150%;
   color: #FFFFFF;
   text-rendering: optimizeLegibility;
 }
@@ -139,7 +180,7 @@ body
   margin:0;
   margin:auto;
   font-family:'caviar_dreamsregular', Arial, sans-serif;
-  font-size:150%;
+  font-size:100%;
   text-rendering: optimizeLegibility;
   background-image: url('http://asumag.com/site-files/asumag.com/files/imagecache/large_img/uploads/2014/06/img4550brighter.jpg');
   background-repeat: no-repeat;

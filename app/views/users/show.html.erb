@@ -31,8 +31,8 @@
       <form action="/signups/<%=signup.id%>/update">
         <%@user = User.find_by(id: session['uid'])%>
         <%if @user.id == 1%>
-        <input class="done" type="checkbox" name="is_complete"><%= Event.find_by_id(signup.event_id).name%><br>
-        <input type="submit" value="Done">
+        <input class="done" type="checkbox" name="is_complete"><span id="event_list"> <%= Event.find_by_id(signup.event_id).name%></span>
+        <input type="submit" value="Event Completed">
         <%else%>
         <li><%= Event.find_by_id(signup.event_id).name%></li>
         <% end %>
@@ -48,7 +48,7 @@
     <ul>
       <% @user.signups.each do |signup| %>
       <% if signup.is_complete %>
-      <li><%=signup.event.name%></li>
+      <li id="event_list">&#8226; <%=signup.event.name%></li>
       <% end %>
       <% end %>
     </ul>

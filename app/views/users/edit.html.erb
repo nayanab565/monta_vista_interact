@@ -1,4 +1,4 @@
-<div class="center">
+<div class="container">
   <h1>Edit Profile</h1>
 
   <form action="/users/<%= @user.id %>/update">
@@ -14,6 +14,13 @@
       <label for="grade">Grade Level</label><br />
       <input id="grade" name="grade" value="<%= @user.grade  %>" type="text" />
     </div>
+    
+    <% if session['uid'] == 1 %>
+    <div>
+      <label for="hours">Hours</label><br />
+      <input id="hours" name="hours" value="<%= @user.hours  %>" type="number" step="0.1" />
+    </div>
+    <% end %>
     <br>
     <div>
       <input type="submit">

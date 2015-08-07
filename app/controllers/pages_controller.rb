@@ -24,7 +24,6 @@ class PagesController < ApplicationController
     @event.sign_ups = params['sign_ups']
     @event.maximum = params['maximum']
     @event.time = params['time']
-    @event.user_id = params['user_id']
     @event.hours = params['hours']
     @event.save
     redirect_to '/events'
@@ -40,7 +39,6 @@ class PagesController < ApplicationController
     @event.sign_ups = params['sign_ups']
     @event.maximum = params['maximum']
     @event.time = params['time']
-    @event.user_id = params['user_id']
     @event.hours = params['hours']
     @event.save
     redirect_to "/events"

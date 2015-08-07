@@ -48,7 +48,9 @@ class UsersController < ApplicationController
     @user.name = params[:name]
     @user.email = params[:email]
     @user.grade = params[:grade]
-    @user.student_id = params[:student_id]
+    if session['uid'] == 1
+    @user.hours = params[:hours]
+    end
     if @user.save
       redirect_to "/users/#{ @user.id }"
     else
@@ -62,9 +64,15 @@ class UsersController < ApplicationController
       redirect_to "/sessions/new"
       return
     else
-    @user = User.find_by(id: params[:id])
-    @user.destroy
-    redirect_to "/users"
+      @user = User.find_by(id: params[:id])
+      @signups = Signup.where(user_id: params['id'])
+      @signups.each do |signup|
+        @event = Event.find_by(id: signup.event_id)
+        @event.sign_ups -= 1
+        @event.save
+      end
+      @user.destroy
+      redirect_to "/users"
     end
   end
 end

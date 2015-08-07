@@ -13,18 +13,20 @@
   <% b= s.find_by(event_id: event.id) %>
   <% if session['uid'].blank? %>
   <form action="/sessions/new">
-    <input type="submit" value="Sign Up">
+    <input class="submit" type="submit" value="Sign Up">
   </form>
+  <% elsif (event.sign_ups >= event.maximum) && (b.blank?) %>
+  <p>This event is full. Better luck next time.</p>
   <% elsif b.blank? %>
   <form action="/events/<%=event.id%>/create_signup">
-    <input type="submit" value="Sign Up">
+    <input class="submit" type="submit" value="Sign Up">
   </form>
   <% elsif b.is_complete%>
   <p>Good job! You've already completed this event!</p>
   <% else %>
   <p>You're signed up.</p>
   <form action="/events/<%=event.id%>/cancel_signup">
-    <input type="submit" value="Cancel">
+    <input class="submit" type="submit" value="Cancel">
   </form>
   <% end %>
   <% end %>
