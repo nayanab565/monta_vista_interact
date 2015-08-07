@@ -1,28 +1,6 @@
-== README
+Welcome! This is Monta Vista Interact Club's website where users are able to sign-up for events, track their hours, and learn more about the club.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Three User Stories:
+1. High school student wants to track his own volunteer hours online. He clicks on 'Create An Account' and types in his personal information. He logs in and sees that he has zero hours on his profile page, so far.
+2. High school student wants to find new volunteer opportunities nearby. She clicks on 'Events' and finds two new volunteer events that she is interested in. She clicks 'Sign Up' at the bottom of each event to register for the events.
+3. High school student wants to learn about humanitarian projects. He clicks 'International Project Committee' and reads about how to help in other nations.
