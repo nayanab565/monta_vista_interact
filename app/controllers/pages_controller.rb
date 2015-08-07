@@ -15,6 +15,14 @@ class PagesController < ApplicationController
     @events = Event.all
   end
   def new_event
+    user = User.find_by(id: session['uid'])
+    if user.blank?
+      redirect_to '/events'
+    elsif user.id == 1
+      render 'new_event'
+    else
+      redirect_to '/events'
+    end
   end
   def create_event
     @event = Event.new
@@ -29,7 +37,15 @@ class PagesController < ApplicationController
     redirect_to '/events'
   end
   def edit_event
-    @event = Event.find_by_id(params['id'])
+    user = User.find_by(id: session['uid'])
+    if user.blank?
+      redirect_to '/events'
+    elsif user.id == 1
+      @event = Event.find_by_id(params['id'])
+      render 'edit_event'
+    else
+      redirect_to '/events'
+    end
   end
   def change_event
     @event = Event.find_by_id(params['id'])

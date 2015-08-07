@@ -9,8 +9,10 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find_by(id: params[:id])
-    if @user.id != session['uid']
+    @user = User.find_by(id: session['uid'])
+    if (@user.id == params['id']) || (@user.id = 1)  
+      @user = User.find_by(id: params['id'])
+    else
       redirect_to "/sessions/new"
     end
   end
@@ -37,8 +39,10 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find_by(id: params[:id])
-    if @user.id != session['uid']
+    @user = User.find_by(id: session['uid'])
+    if (@user.id == params['id']) || (@user.id = 1)  
+      @user = User.find_by(id: params['id'])
+    else
       redirect_to "/sessions/new"
     end
   end

@@ -16,6 +16,7 @@
 
     <tbody>
       <% @signups.each do |signup| %>
+      <%if signup.user != nil%>
       <tr>
         <td><%= signup.user.name%></td>
         <td><%= signup.event.name %></td>
@@ -24,6 +25,7 @@
         <td><a href="/signups/<%= signup.id %>/edit">Edit</a></td>
         <td><a href="/signups/<%= signup.id %>/destroy">Destroy</a></td>
       </tr>
+      <% end %>
       <% end %>
     </tbody>
   </table>
