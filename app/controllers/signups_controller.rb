@@ -76,7 +76,7 @@ end
 def cancel_signup
   @signup = Signup.where(event_id: params[:id])
   @todestroy = @signup.find_by(user_id: session['uid'])
-  @event = Event.find_by(params[:id])
+  @event = Event.find_by(id: params[:id])
   @event.sign_ups -= 1
   @event.save
   @todestroy.destroy
