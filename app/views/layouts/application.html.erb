@@ -29,23 +29,20 @@
             <div id="signed_in_msg" class="container">
               <div class="inline">You're signed in, <a class="top-right" href="/users/<%=u.id%>"><%=u.name%></a>
                 | <a class="top-right" href = "/sessions/destroy">Log Out</a>
-              </div>
-              
-              
+              </div> 
             </div>
+            <% else %>
             <div id="links" class="container">
-              <% else %>
-              <a class="sign-up" href="/new_user">Sign Up</a>
-              <span class="bar"> | </span>
-              <a class="log_in_n_out" href="/sessions/new">Log In</a>
-              <% end %>
+              <a class="top-right" href="/new_user">Sign Up</a> | 
+              <a class="top-right" href="/sessions/new">Log In</a>
             </div>
+            <% end %>
           </div>
         </div>
       </div>
     </nav>
     <div id="background-shade" class="jumbotron">
-    <%= yield %>
+      <%= yield %>
     </div>
 
   </body>

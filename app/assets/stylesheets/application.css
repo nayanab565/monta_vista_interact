@@ -40,9 +40,10 @@
 }
 #links
 {
-  position: absolute;
-  top: 10%;
-  left: 90%;
+  color: #FFFFFF;
+  position:absolute;
+  top:10%;
+  left:6%;
 }
 #block_center
 {
@@ -72,24 +73,6 @@
 input
 {
   font-size:40px;
-}
-.log_in_n_out
-{
-  color: #FFFFFF;
-  position: absolute;
-  left: 2.5%;
-}
-.sign-up
-{
-  color: #FFFFFF;
-  position: absolute;
-  left: -4%;
-}
-.bar
-{
-  color:#FFFFFF;
-  position: absolute;
-  left: 3.8%;
 }
 .logo
 {
