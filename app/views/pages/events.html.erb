@@ -1,6 +1,6 @@
 <div class="container">
   <h1>Events</h1>
-  <% @events.each do |event| %>
+  <% @events.order("created_at").each do |event| %>
   <hr>
   <h2><%=event.name%></h2>
   <p>Location: <%=event.location%></p>
