@@ -1,18 +1,24 @@
 @font-face 
 {
-  font-family: 'caviar_dreamsregular';
-  src: font-url("/assets/stylesheets/CaviarDreams-webfont.eot");
-  src: font-url("/assets/stylesheets/CaviarDreams-webfont.eot?#iefix") format("embedded-opentype"), font-url("/assets/stylesheets/CaviarDreams-webfont.svg#caviar_dreamsregular") format("svg"), font-url("/assets/stylesheets/CaviarDreams-webfont.woff") format("woff"), font-url("/assets/stylesheets/CaviarDreams-webfont.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
+    font-family:'caviar_dreamsregular';
+    src: url('CaviarDreams-webfont.eot');
+    src: url('CaviarDreams-webfont.eot?#iefix') format('embedded-opentype'),
+          url('CaviarDreams-webfont.svg#caviar_dreamsregular') format('svg'),
+         url('CaviarDreams-webfont.woff') format('woff'),
+         url('CaviarDreams-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 @font-face 
 {
-  font-family: 'caviar_dreamsbold';
-  src: font-url("/assets/stylesheets/Caviar_Dreams_Bold-webfont.eot");
-  src: font-url("/assets/stylesheets/Caviar_Dreams_Bold-webfont.eot?#iefix") format("embedded-opentype"), font-url("/assets/stylesheets/Caviar_Dreams_Bold-webfont.svg#caviar_dreamsbold") format("svg"), font-url("/assets/stylesheets/Caviar_Dreams_Bold-webfont.woff") format("woff"), font-url("/assets/stylesheets/Caviar_Dreams_Bold-webfont.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
+    font-family: 'caviar_dreamsbold';
+    src: url('Caviar_Dreams_Bold-webfont.eot');
+    src: url('Caviar_Dreams_Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('Caviar_Dreams_Bold-webfont.svg#caviar_dreamsbold') format('svg'),
+         url('Caviar_Dreams_Bold-webfont.woff') format('woff'),
+         url('Caviar_Dreams_Bold-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 #background-shade
 {
