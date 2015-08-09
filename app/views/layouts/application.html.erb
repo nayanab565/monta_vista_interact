@@ -26,14 +26,14 @@
             <img class="logo" src="http://i.imgur.com/Rj6ZwoR.png?1" title="source: imgur.com" />
             <% if session['student_id'] %>
             <% u = User.find_by(student_id: session['student_id']) %>
-            <div id="sign_in_msg" class="container">
-              <div class="inline">You're signed in, </div>
-              <a class="inline" href="/users/<%=u.id%>"><%=u.name%></a><span> |</span>
+            <div id="signed_in_msg" class="container">
+              <div class="inline">You're signed in, <a class="top-right" href="/users/<%=u.id%>"><%=u.name%></a>
+                | <a class="top-right" href = "/sessions/destroy">Log Out</a>
+              </div>
+              
+              
             </div>
-            <% end %>
             <div id="links" class="container">
-              <% if session['student_id'] %>
-              <a class="log_in_n_out" href = "/sessions/destroy">Log Out</a>
               <% else %>
               <a class="sign-up" href="/new_user">Sign Up</a>
               <span class="bar"> | </span>

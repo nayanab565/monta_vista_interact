@@ -30,11 +30,11 @@
   position:relative;
   top:-20px;
 }
-#sign_in_msg
+#signed_in_msg
 {
   position: absolute;
   top: 10%;
-  left: 8%;
+  left: 6%;
   text-align: right;
   color:#FFFFFF;
 }
@@ -49,6 +49,10 @@
   margin-left: auto;
   margin-right: auto;
   width: 6em;
+}
+.top-right
+{
+  margin:0;
 }
 .background
 {
@@ -213,7 +217,7 @@ a:hover, a:focus
 nav a,
 #submit.active
 {
-  color: #000;
+  color: #FFFFFF;
   font-size: 16px;
   display: inline-block;
   margin-left: 25px;
