@@ -20,10 +20,14 @@
     font-weight: normal;
     font-style: normal;
 }
+#hide
+{
+  visibility: hidden;
+}
 #background-shade
 {
-  background:rgba(0,0,0,0.25);
-  padding-bottom:5px;
+  background:rgba(0,0,0,0.35);
+  padding-bottom:0px;
 }
 #log-in
 {
@@ -51,13 +55,15 @@
   margin-right: auto;
   width: 6em;
 }
+.footer {
+    width: 100%;
+    height: auto;
+    background: rgba(38, 125, 241, 0.75);
+    text-align: center;  
+}
 .top-right
 {
   margin:0;
-}
-.background
-{
-  
 }
 .m
 {
@@ -95,6 +101,12 @@ input
   margin-bottom: 0px;
   width: 100%;
 }
+.btn.btn-primary:hover
+{
+    border:1px;
+    margin:1px;
+    text-decoration: none;
+}
 .text_center
 {
   text-align:center;
@@ -116,6 +128,14 @@ div .container
 {
   position:relative;
   top:-30px;
+}
+.underlined
+{
+  color: #FFFFFF;
+  font-size: 20px;
+  border-bottom: 3px solid #CBE86B;
+  text-decoration: none;
+  opacity:1!important;
 }
 .inline
 {
@@ -151,6 +171,14 @@ nav
   font-size:20px;
   display:inline;
 }
+.text-muted
+{
+  bottom: 0;
+  border:0;
+  margin:0;
+  color:#FFFFFF;
+  font-size:16px;
+}
 h1,h2,h3,h4,h5,h6
 {
   font-family:'caviar_dreamsbold', Arial, sans-serif;
@@ -160,6 +188,10 @@ h1,h2,h3,h4,h5,h6
 button
 {
   color:#000000;
+}
+input[type=submit]
+{
+  width: auto;
 }
 body
 {
@@ -178,7 +210,10 @@ body
   max-width: 1366px;
   color:#FFFFFF;
 }
-
+form input[type=text], input[type=password]
+{
+width: 18%;
+}
 input
 {
   color:#000000;

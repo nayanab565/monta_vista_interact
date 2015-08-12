@@ -12,9 +12,18 @@
     </div>
     <div>
       <label for="grade">Grade Level</label><br />
-      <input id="grade" name="grade" value="<%= @user.grade  %>" type="text" />
+      <div class="input-group">
+        <input type="radio" name="grade" value="9">&nbsp;<span id="hide">0</span>9
+        <br>
+        <input type="radio" name="grade" value="10">&nbsp;10
+        <br>
+        <input type="radio" name="grade" value="11">&nbsp;11
+        <br>
+        <input type="radio" name="grade" value="12">&nbsp;12
+        <br>
+      </div>
     </div>
-    
+
     <% if session['uid'] == 1 %>
     <div>
       <label for="hours">Hours</label><br />

@@ -1,48 +1,83 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <script src="https://code.jquery.com/jquery.min.js"></script>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <title>Monta Vista Interact Club</title>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-    <%= csrf_meta_tags %>
-  </head>
-  <body>
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <div class="navbar-brand">
-            <div class="links-bar">
-              <a class="m" href="/home">Home</a>&nbsp;
-              <a class="m" href="/about">About Us</a>&nbsp;
-              <a class="m" href="/officers">Officers</a>&nbsp;
-              <a class="m" href="/international_project_committee">International Project Committee</a>&nbsp;
-              <a class="m" href="/community_project_committee">Community Project Committee</a>&nbsp;
-              <a class="m" href="/events">Events</a>&nbsp;
-              <a class="m" href="/contact_us">Contact Us</a>&nbsp;
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <script src="https://code.jquery.com/jquery.min.js"></script>
+      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+      <title>Monta Vista Interact Club</title>
+      <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+      <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+      <%= csrf_meta_tags %>
+    </head>
+    <body>
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <div class="navbar-brand">
+              <div class="links-bar">
+                <% urlpath = request.original_fullpath%>
+                <% puts urlpath %>
+                <% if urlpath == "/home" %>
+                <a class="underlined" href="/home">Home</a>&nbsp;
+                <% else %>
+                <a class="m" href="/home">Home</a>&nbsp;
+                <% end %>
+                <% if urlpath == "/about" %>
+                <a class="underlined" href="/about">About Us</a>&nbsp;
+                <% else %>
+                <a class="m" href="/about">About Us</a>&nbsp;
+                <% end %>
+                <% if urlpath == "/officers" %>
+                <a class="underlined" href="/officers">Officers</a>&nbsp;
+                <% else %>
+                <a class="m" href="/officers">Officers</a>&nbsp;
+                <% end %>
+                <% if urlpath == "/international_project_committee" %>
+                <a class="underlined" href="/international_project_committee">International Project Committee</a>&nbsp;
+                <% else %>
+                <a class="m" href="/international_project_committee">International Project Committee</a>&nbsp;
+                <% end %>
+                <% if urlpath == "/community_project_committee" %>
+                <a class="underlined" href="/community_project_committee">Community Project Committee</a>&nbsp;
+                <% else %>
+                <a class="m" href="/community_project_committee">Community Project Committee</a>&nbsp;
+                <% end %>
+                <% if urlpath == "/events" %>
+                <a class="underlined" href="/events">Events</a>&nbsp;
+                <% else %>
+                <a class="m" href="/events">Events</a>&nbsp;
+                <% end %>
+                <% if urlpath == "/contact_us" %>
+                <a class="underlined" href="/contact_us">Contact Us</a>&nbsp;
+                <% else %>
+                <a class="m" href="/contact_us">Contact Us</a>&nbsp;
+                <% end %>
+              </div>
+              <img class="logo" src="http://i.imgur.com/Rj6ZwoR.png?1" title="source: imgur.com" />
+              <% if session['student_id'] %>
+              <% u = User.find_by(student_id: session['student_id']) %>
+              <div id="signed_in_msg" class="container">
+                <div class="inline">You're signed in, <a class="top-right" href="/users/<%=u.id%>"><%=u.name%></a>
+                  | <a class="top-right" href = "/sessions/destroy">Log Out</a>
+                </div> 
+              </div>
+              <% else %>
+              <div id="links" class="container">
+                <a class="top-right" href="/new_user">Sign Up</a> | 
+                <a class="top-right" href="/sessions/new">Log In</a>
+              </div>
+              <% end %>
             </div>
-            <img class="logo" src="http://i.imgur.com/Rj6ZwoR.png?1" title="source: imgur.com" />
-            <% if session['student_id'] %>
-            <% u = User.find_by(student_id: session['student_id']) %>
-            <div id="signed_in_msg" class="container">
-              <div class="inline">You're signed in, <a class="top-right" href="/users/<%=u.id%>"><%=u.name%></a>
-                | <a class="top-right" href = "/sessions/destroy">Log Out</a>
-              </div> 
-            </div>
-            <% else %>
-            <div id="links" class="container">
-              <a class="top-right" href="/new_user">Sign Up</a> | 
-              <a class="top-right" href="/sessions/new">Log In</a>
-            </div>
-            <% end %>
           </div>
         </div>
+      </nav>
+      <div id="background-shade" class="jumbotron">
+        <%= yield %>
       </div>
-    </nav>
-    <div id="background-shade" class="jumbotron">
-      <%= yield %>
-    </div>
-  </body>
-</html>
+      <footer class="footer">
+        <div class="container">
+        <p class="text-muted">&#169; Website Designed By: Jimmy Li</p>
+        </div>
+      </footer>
+    </body>
+  </html>
