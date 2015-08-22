@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get '/' => 'pages#home'
   # Routes for the Signup resource:
   # CREATE
   get '/new_signup' => 'signups#new'
