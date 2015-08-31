@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get '/events/:id/cancel_signup' => 'signups#cancel_signup'
   get '/events/:id/edit' => 'pages#edit_event'
   get '/events/:id/change' => 'pages#change_event'
+  get '/events/:id/complete_event' => 'pages#complete_event'
 
   # READ
   get '/signups' => 'signups#index'

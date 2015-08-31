@@ -56,7 +56,16 @@ class PagesController < ApplicationController
     @event.maximum = params['maximum']
     @event.time = params['time']
     @event.hours = params['hours']
+    @event.completed = params['completed']
     @event.save
     redirect_to "/events"
   end
+  
+  def complete_event
+  @event = Event.find_by(id: params[:id])
+    @event.completed = true
+  @event.save
+
+  redirect_to "/events"
+end
 end

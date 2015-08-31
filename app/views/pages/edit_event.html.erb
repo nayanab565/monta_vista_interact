@@ -29,6 +29,10 @@
       <label for="time">Time</label><br/>
       <input id="time" name="time" type="text" aria-describedby="basic-addon1" value="<%=@event.time%>"/>
     </div>
+    <div>
+      <label for="completed">Completed?</label><br/>
+      <input id="completed" name="completed" type="boolean" aria-describedby="basic-addon1" value="<%=@event.completed%>"/>
+    </div>
     <br>
     <input type = "submit"/>
   </form>
