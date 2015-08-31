@@ -46,9 +46,10 @@
   <div>
     <strong>Completed Events</strong>:<br />
     <ul>
+      <%@user = User.find_by(id: session['uid'])%>
       <% @user.signups.each do |signup| %>
-      <% if signup.is_complete %>
-      <li class="event_list">&#8226; <%=signup.event.name%></li>
+      <% if signup.is_complete == true %>
+      <li class="event_list">&#8226; <%=signup.event.name%></li><br>
       <% end %>
       <% end %>
     </ul>
