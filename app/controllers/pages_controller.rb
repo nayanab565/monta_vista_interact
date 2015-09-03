@@ -33,6 +33,7 @@ class PagesController < ApplicationController
     @event.maximum = params['maximum']
     @event.time = params['time']
     @event.hours = params['hours']
+    @event.completed = params['completed']
     @event.save
     redirect_to '/events'
   end
