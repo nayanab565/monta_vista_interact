@@ -4,6 +4,10 @@
   <% if event.completed == false %>
   <hr>
   <h2><%=event.name%></h2>
+  <% d = event.description %>
+  <% if d.blank? == false %>
+  <p><%=d%></p>
+  <% end %>
   <p>Location: <%=event.location%></p>
   <p>Date: <%=event.date%></p>
   <p>Hours: <%=event.hours%></p>

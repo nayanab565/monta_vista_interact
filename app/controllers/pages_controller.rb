@@ -34,6 +34,7 @@ class PagesController < ApplicationController
     @event.time = params['time']
     @event.hours = params['hours']
     @event.completed = params['completed']
+    @event.description = params['description']
     @event.save
     redirect_to '/events'
   end
@@ -58,6 +59,7 @@ class PagesController < ApplicationController
     @event.time = params['time']
     @event.hours = params['hours']
     @event.completed = params['completed']
+    @event.description = params['description']
     @event.save
     redirect_to "/events"
   end
