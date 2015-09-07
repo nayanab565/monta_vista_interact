@@ -36,7 +36,7 @@
   <% end %>
   <% if session['uid'].blank? == false %>
   <% @user = User.find_by(id:session['uid']) %>
-    <% if @user.id == 1 %>
+  <% if @user.isAdmin == true%>
   <br>
       <a href="/events/<%=event.id%>/edit">Edit Event</a>
       <form action="/events/<%=event.id%>/complete_event">
