@@ -10,14 +10,11 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by(id: session['uid'])
-    if (@user.id != params['id']) && (@user.isAdmin == false) 
+    if ((@user.id).to_i == (params[:id]).to_i) || (@user.isAdmin == true)  
+      @user = User.find_by(id: params['id'])
+    else
       redirect_to "/sessions/new"
     end
-#     if (@user.id == params['id']) || (@user.isAdmin == true)  
-#       @user = User.find_by(id: params['id'])
-#     else
-#       redirect_to "/sessions/new"
-#     end
   end
 
   def new
