@@ -24,7 +24,7 @@
       </div>
     </div>
 
-    <% if session['uid'] == 1 %>
+    <% if User.find_by(id: session['uid'].isAdmin == true) %>
     <div>
       <label for="hours">Hours</label><br />
       <input id="hours" name="hours" value="<%= @user.hours  %>" type="number" step="0.1" />
