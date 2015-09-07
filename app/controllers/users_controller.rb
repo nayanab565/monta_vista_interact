@@ -53,7 +53,8 @@ class UsersController < ApplicationController
     @user.name = params[:name]
     @user.email = params[:email]
     @user.grade = params[:grade]
-    if @user.isAdmin == true
+    @signedinperson = User.find_by(id: session['uid'])
+    if @signedinperson.isAdmin == true
       @user.hours = params[:hours]
       @user.isAdmin = params[:isAdmin]
     end

@@ -67,7 +67,9 @@ def destroy
       redirect_to "/sessions/new"
     end
   @signup = Signup.find_by(id: params[:id])
+  @event.sign_ups -= 1
   @signup.destroy
+  
 
 
   redirect_to "/events"
