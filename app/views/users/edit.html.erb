@@ -23,7 +23,7 @@
         <br>
       </div>
     </div>
-    <% u = User.find_by(id: session['uid'] %>
+    <% u = User.find_by(id: session['uid']) %>
     <% if u.isAdmin == true) %>
     <div>
       <label for="hours">Hours</label><br />
