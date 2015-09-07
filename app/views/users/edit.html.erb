@@ -13,13 +13,13 @@
     <div>
       <label for="grade">Grade Level</label><br />
       <div class="input-group">
-        <input type="radio" name="grade" value="9">&nbsp;<span id="hide">0</span>9
+        <input type="radio" name="grade" value="9" <% if @user.grade == 9 %> checked="checked" <% end %>>&nbsp;<span id="hide">0</span>9
         <br>
-        <input type="radio" name="grade" value="10">&nbsp;10
+        <input type="radio" name="grade" value="10" <% if @user.grade == 10 %> checked="checked" <% end %> >&nbsp;10
         <br>
-        <input type="radio" name="grade" value="11">&nbsp;11
+        <input type="radio" name="grade" value="11" <% if @user.grade == 11 %> checked="checked" <% end %> >&nbsp;11
         <br>
-        <input type="radio" name="grade" value="12">&nbsp;12
+        <input type="radio" name="grade" value="12" <% if @user.grade == 12 %> checked="checked" <% end %> >&nbsp;12
         <br>
       </div>
     </div>

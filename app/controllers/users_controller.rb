@@ -3,14 +3,14 @@ class UsersController < ApplicationController
   def index
     @users = User.all
     @user = User.find_by(id: session['uid'])
-    if @user.id != 1
+    if @user.isAdmin == false
       redirect_to "/sessions/new"
     end
   end
 
   def show
     @user = User.find_by(id: session['uid'])
-    if (@user.id == params['id']) || (@user.id = 1)  
+    if (@user.id == params['id']) || (@user.isAdmin == true)  
       @user = User.find_by(id: params['id'])
     else
       redirect_to "/sessions/new"
@@ -41,7 +41,7 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find_by(id: session['uid'])
-    if (@user.id == params['id']) || (@user.id = 1)  
+    if (@user.id == params['id']) || (@user.isAdmin == true)  
       @user = User.find_by(id: params['id'])
     else
       redirect_to "/sessions/new"
@@ -53,9 +53,9 @@ class UsersController < ApplicationController
     @user.name = params[:name]
     @user.email = params[:email]
     @user.grade = params[:grade]
-    if session['uid'] == 1
-    @user.hours = params[:hours]
-    @user.isAdmin = params[:isAdmin]
+    if @user.isAdmin == true
+      @user.hours = params[:hours]
+      @user.isAdmin = params[:isAdmin]
     end
     if @user.save
       redirect_to "/users/#{ @user.id }"
@@ -66,7 +66,7 @@ class UsersController < ApplicationController
 
   def destroy
     @user = User.find_by(id: session['uid'])
-    if @user.id != 1
+    if @user.isAdmin == false
       redirect_to "/sessions/new"
       return
     else

@@ -3,7 +3,7 @@ class SignupsController < ApplicationController
   def index
     @signups = Signup.all
     @user = User.find_by(id: session['uid'])
-    if @user.id != 1
+    if @user.isAdmin == false
       redirect_to "/sessions/new"
     end
   end
@@ -11,7 +11,7 @@ class SignupsController < ApplicationController
   def show
     @signup = Signup.find_by(id: params[:id])
     @user = User.find_by(id: session['uid'])
-    if @user.id != 1
+    if @user.isAdmin == false
       redirect_to "/sessions/new"
     end
   end
@@ -37,7 +37,7 @@ end
 
 def edit
    @user = User.find_by(id: session['uid'])
-    if @user.id != 1
+    if @user.isAdmin == false
       redirect_to "/sessions/new"
     end
   @signup = Signup.find_by(id: params[:id])
@@ -63,7 +63,7 @@ end
 
 def destroy
    @user = User.find_by(id: session['uid'])
-    if @user.id != 1
+  if @user.isAdmin == false
       redirect_to "/sessions/new"
     end
   @signup = Signup.find_by(id: params[:id])

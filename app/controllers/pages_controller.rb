@@ -18,7 +18,7 @@ class PagesController < ApplicationController
     user = User.find_by(id: session['uid'])
     if user.blank?
       redirect_to '/events'
-    elsif user.id == 1
+    elsif user.isAdmin == true
       render 'new_event'
     else
       redirect_to '/events'
@@ -42,7 +42,7 @@ class PagesController < ApplicationController
     user = User.find_by(id: session['uid'])
     if user.blank?
       redirect_to '/events'
-    elsif user.id == 1
+    elsif user.isAdmin == true
       @event = Event.find_by_id(params['id'])
       render 'edit_event'
     else
