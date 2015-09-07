@@ -8,7 +8,7 @@
       <tr>
         <th>User</th>
         <th>Event</th>
-        <th></th>
+        <th>Email</th>
         <th></th>
         <th></th>
       </tr>
@@ -20,6 +20,7 @@
       <tr>
         <td><%= signup.user.name%></td>
         <td><%= signup.event.name %></td>
+        <td><%= signup.user.email %></td>
         <td><a href="/signups/<%= signup.id %>">Show</a>
         </td>
         <td><a href="/signups/<%= signup.id %>/edit">Edit</a></td>
