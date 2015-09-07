@@ -41,7 +41,7 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find_by(id: session['uid'])
-    if (@user.id == params['id']) || (@user.isAdmin == true)  
+    if ((@user.id).to_i == (params[:id]).to_i) || (@user.isAdmin == true)  
       @user = User.find_by(id: params['id'])
     else
       redirect_to "/sessions/new"
