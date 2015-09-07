@@ -30,6 +30,7 @@ class UsersController < ApplicationController
     @user.hours = 0.0
     @user.password = params[:password]
     @user.password_confirmation = params[:password_confirmation]
+    @user.isAdmin = false
     
     if (@student_id_confirmation == @user.student_id && @user.save)
         redirect_to "/sessions/new"
@@ -54,6 +55,7 @@ class UsersController < ApplicationController
     @user.grade = params[:grade]
     if session['uid'] == 1
     @user.hours = params[:hours]
+    @user.isAdmin = params[:isAdmin]
     end
     if @user.save
       redirect_to "/users/#{ @user.id }"

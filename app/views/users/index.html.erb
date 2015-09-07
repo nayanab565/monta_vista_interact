@@ -10,7 +10,7 @@
         <th>Email</th>
         <th>Grade</th>
         <th>Student</th>
-        <th>Password digest</th>
+        <th>Admin?</th>
         <th></th>
         <th></th>
         <th></th>
@@ -24,7 +24,7 @@
         <td><%= user.email %></td>
         <td><%= user.grade %></td>
         <td><%= user.student_id %></td>
-        <td><%= user.password_digest %></td>
+        <td><%= user.isAdmin %></td>
         <td><a href="/users/<%= user.id %>">Show</a>
         </td>
         <td><a href="/users/<%= user.id %>/edit">Edit</a></td>
