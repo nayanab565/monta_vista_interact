@@ -11,12 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150907183445) do
+ActiveRecord::Schema.define(version: 20150920051850) do
 
   create_table "events", force: :cascade do |t|
     t.string   "name"
     t.string   "location"
-    t.string   "date"
     t.integer  "sign_ups"
     t.integer  "maximum"
     t.string   "time"
@@ -25,6 +24,7 @@ ActiveRecord::Schema.define(version: 20150907183445) do
     t.float    "hours"
     t.boolean  "completed"
     t.string   "description"
+    t.date     "date"
   end
 
   create_table "signups", force: :cascade do |t|
