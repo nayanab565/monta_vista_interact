@@ -9,7 +9,7 @@
   <p><%=d%></p>
   <% end %>
   <p>Location: <%=event.location%></p>
-  <p>Date: <%day = event.date%><%=day%></p>
+  <p>Date: <%date = event.date%><%=date.to_formatted_s(:long)%></p>
   
   <p>Hours: <%=event.hours%></p>
   <p>Sign-ups: <%=event.sign_ups%></p>
