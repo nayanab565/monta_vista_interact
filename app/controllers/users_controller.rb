@@ -56,7 +56,7 @@ class UsersController < ApplicationController
     @signedinperson = User.find_by(id: session['uid'])
     if @signedinperson.isAdmin == true
       @user.hours = params[:hours]
-      @user.password = params[:password]
+      #@user.password = params[:password]
       @user.isAdmin = params[:isAdmin]
     end
     if @user.save
