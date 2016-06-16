@@ -17,7 +17,7 @@
  
     <p>Total Number of Volunteers Needed: <%=event.maximum%></p>
   
-   <p>Sign-ups: <%=event.sign_ups%></p>
+   <p>Number of Sign-ups: <%=event.sign_ups%></p>
   
   <% @signups.each do |signup| %>
     <% if signup.event_id == event.id %>
@@ -25,7 +25,7 @@
     <% @u = @users.find_by_id(@id) %>
     
     <% if @u.nil? == false %>
-      <p> &nbsp &nbsp &nbsp &nbsp <%= @u.name %> <%= @u.email %> </p>
+      <p> Volunteers: <br> &nbsp &nbsp &nbsp &nbsp <%= @u.name %> <%= @u.email %> </p>
     <% end %>
   <% end %>
   <% end %>
