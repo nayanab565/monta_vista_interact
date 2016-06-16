@@ -13,6 +13,8 @@ class PagesController < ApplicationController
   end
   def events
     @events = Event.all
+    @signups = Signup.all
+    @users = User.all
   end
   def new_event
     user = User.find_by(id: session['uid'])
@@ -39,6 +41,8 @@ class PagesController < ApplicationController
     redirect_to '/events'
   end
   def edit_event
+    @signups = Signup.all
+    @users = User.all
     user = User.find_by(id: session['uid'])
     if user.blank?
       redirect_to '/events'
@@ -50,6 +54,8 @@ class PagesController < ApplicationController
     end
   end
   def change_event
+    @signups = Signup.all
+    @users = User.all
     @event = Event.find_by_id(params['id'])
     @event.name = params['name']
     @event.location = params['location']

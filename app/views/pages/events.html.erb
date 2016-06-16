@@ -11,10 +11,25 @@
   <p>Location: <%=event.location%></p>
   <p>Date: <%date = event.date%><%=date.to_formatted_s(:long)%></p>
   
-  <p>Hours: <%=event.hours%></p>
-  <p>Sign-ups: <%=event.sign_ups%></p>
-  <p>Maximum: <%=event.maximum%></p>
   <p>Time: <%=event.time%></p>
+  
+  <p>Hours: <%=event.hours%></p>
+ 
+    <p>Total Number of Volunteers Needed: <%=event.maximum%></p>
+  
+   <p>Sign-ups: <%=event.sign_ups%></p>
+  
+  <% @signups.each do |signup| %>
+    <% if signup.event_id == event.id %>
+    <% @id = signup.user_id %>
+    <% @u = @users.find_by_id(@id) %>
+    
+    <% if @u.nil? == false %>
+      <p> &nbsp &nbsp &nbsp &nbsp <%= @u.name %> <%= @u.email %> </p>
+    <% end %>
+  <% end %>
+  <% end %>
+
   <% s= Signup.where(user_id:session['uid']) %>
   <% b= s.find_by(event_id: event.id) %>
   <% if session['uid'].blank? %>
