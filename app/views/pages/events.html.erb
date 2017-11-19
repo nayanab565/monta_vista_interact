@@ -2,6 +2,8 @@
   <h1>Events</h1>
   <% @events.order("date").each do |event| %>
   
+  <% if event.maximum != nil %>
+  
   <% if event.completed == false %>
   <hr>
   <h2><%=event.name%></h2>
@@ -9,18 +11,15 @@
   <% if d.blank? == false %>
   <p><%=d%></p>
   <% end %>
+  
   <p>Location: <%=event.location%></p>
-  
   <p>Date: <%date = event.date%><%=date.to_formatted_s(:long)%></p>
- 
   <p>Time: <%=event.time%></p>
-  
   <p>Hours: <%=event.hours%></p>
- 
     <p>Total Number of Volunteers Needed: <%=event.maximum%></p>
-  
    <p>Number of Sign-ups: <%=event.sign_ups%></p>
   <p>Volunteers:</p>
+  
   <% @signups.each do |signup| %>
     <% if signup.event_id == event.id %>
     <% @id = signup.user_id %>
@@ -64,4 +63,7 @@
   <% end %>
   <% end %>
   <% end %>
+  
+  <%end %>
+  
 </div>
