@@ -1,9 +1,7 @@
 <div class="container">
   <h1>Events</h1>
-  <% @events.order("date").each do |event| %>
-  
-  <% if event.maximum != nil %>
-  
+  <% @events.order("date").each do |event| %>  
+
   <% if event.completed == false %>
   <hr>
   <h2><%=event.name%></h2>
@@ -62,8 +60,5 @@
     <% end %>
   <% end %>
   <% end %>
-  <% end %>
-  
-  <%end %>
-  
+  <% end %>  
 </div>
