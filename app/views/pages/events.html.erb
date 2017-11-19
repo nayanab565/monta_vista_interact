@@ -3,6 +3,7 @@
   <% @events.order("date").each do |event| %>
   if event.id == 240 || event.sign_ups == nil
        event.sign_ups = 0
+  end
   <% if event.completed == false %>
   <hr>
   <h2><%=event.name%></h2>
