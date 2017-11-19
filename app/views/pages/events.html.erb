@@ -1,7 +1,9 @@
 <div class="container">
   <h1>Events</h1>
   <% @events.order("date").each do |event| %>  
-
+  
+  <% if event.maximum != nil %> //whole sequence only executes as long as this true, to work around event #240
+  
   <% if event.completed == false %>
   <hr>
   <h2><%=event.name%></h2>
@@ -61,4 +63,7 @@
   <% end %>
   <% end %>
   <% end %>  
+  
+  <% end %>
+  
 </div>
