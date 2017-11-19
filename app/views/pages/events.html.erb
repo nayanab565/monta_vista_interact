@@ -2,7 +2,7 @@
   <h1>Events</h1>
   <% @events.order("date").each do |event| %>
  
-  <% if event.id == 240 %>
+  <% if event.maximum == nil %>
       event.completed = true
   <% end %>
   
