@@ -1,7 +1,7 @@
 <div class="container">
   <h1>Events</h1>
   <% @events.order("date").each do |event| %>
-  <% if event.id == 240 || event.sign_ups == nil %>
+  if event.id == 240 || event.sign_ups == nil
        event.sign_ups = 0
   <% if event.completed == false %>
   <hr>
