@@ -45,7 +45,7 @@
   <form action="/sessions/new">
     <input class="submit" type="submit" value="Sign Up">
   </form>
-  <% elsif (event.sign_ups >= event.maximum) && (b.blank?) %>
+  <% elsif (event.maximum) && (b.blank?) %>
   <p>This event is full. Better luck next time.</p>
   <% elsif b.blank? %>
   <form action="/events/<%=event.id%>/create_signup">
