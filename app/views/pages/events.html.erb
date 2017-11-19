@@ -2,7 +2,8 @@
   <h1>Events</h1>
   <% @events.order("date").each do |event| %>  
   
-  <% if event.maximum != nil %> #whole sequence only executes as long as this true, to work around event #240
+  <% if event.maximum != nil %> 
+  #whole sequence only executes as long as this true, to work around event #240
   
   <% if event.completed == false %>
   <hr>
