@@ -13,11 +13,7 @@
   <% end %>
   
   <p>Location: <%=event.location%></p>
-  
-  <% if event.date != nil %>
-    <p>Date: <%date = event.date%><%=date.to_formatted_s(:long)%></p>
-  <% end %>
-  
+  <p>Date: <%date = event.date%><%=date.to_formatted_s(:long)%></p> 
   <p>Time: <%=event.time%></p>
   <p>Hours: <%=event.hours%></p>
     <p>Total Number of Volunteers Needed: <%=event.maximum%></p>
